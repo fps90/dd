@@ -16,6 +16,9 @@ WORKDIR /app
 # نسخ جميع الملفات إلى الحاوية
 COPY . .
 
+# حذف أي سكربت تلقائي مضاف أثناء البناء
+RUN rm -f /app/*.sh
+
 # تثبيت المتطلبات من ملف requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
 
